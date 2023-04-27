@@ -1,0 +1,3 @@
+- botão de adicionar ao carrinho já na tela de cardapio, sem a necessidade de entrar na tela de produto
+- area de combos/promoções, Banner será mantido?
+-  

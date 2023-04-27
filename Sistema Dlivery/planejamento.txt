@@ -1,0 +1,60 @@
+Planejando o sistema
+
+Sistema de delivery
+
+Quem vai usar o sistema:
+
+- usuário final.
+- o estabelecimento.
+- Admin do sistema.
+
+Funcionalidades:
+
+Usuarios:
+
+- Carrinho de compras (com checkout)
+- Listagem de produtos
+- Login/cadastro
+- Visualização de pedidos
+
+Estabelecimento:
+
+- Gestão de pedidos
+- Gestão de produtos
+
+Admin:
+
+- Gestão de estabelecimmentos
+
+Telas:
+
+Usuarios:
+
+- Home - Listagem de promoções e produtos
+- Página do produto em específico
+- Carrinho de compras
+- Login/Cadfastro
+- Checkout (para logado)
+- Cadastro de endereços
+- Lista de Pedidos
+- Pedido individual
+
+Estabelecimento:
+
+- Login/cadastro
+- Listagem de pedidos
+- Edição de pedidos
+- Listagem de produtos
+- Edição de produtos
+
+Admin:
+
+- Listagem de estabeleimentos
+- Edição de estabelecimentos
+
+Definição das tecnologias:
+
+- NextJS (com SSR) e Prisma (ORM)
+- MySQL
+- Api RESTful
+- Typescript

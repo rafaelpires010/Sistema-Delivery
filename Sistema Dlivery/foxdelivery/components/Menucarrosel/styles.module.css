@@ -1,0 +1,25 @@
+.menuCarrosel{
+      
+    margin: 24px;
+
+  }
+  
+  .buttonCarrosel {
+    
+    font-size: 15px;
+
+    border: 3px solid;
+    
+    height: 40px;
+    border-radius: 17px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+
+
+  
