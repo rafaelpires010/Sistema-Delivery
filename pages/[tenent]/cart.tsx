@@ -3,7 +3,7 @@ import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 import { useAppContext } from '../../contexts/app';
 import { useAuthContext } from '../../contexts/auth';
-import { useApi } from '../../libs/useApi';
+import { Api } from '../../libs/useApi';
 import styles from '../../styles/Cart.module.css';
 import { Tenent } from '../../types/Tenent';
 import { User } from '../../types/User';
@@ -214,7 +214,7 @@ type Props = {
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const { tenent: tenantSlug } = context.query
-  const api = useApi(tenantSlug as string);
+  const api = Api(tenantSlug as string);
 
 
   //Get Tenant

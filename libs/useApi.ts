@@ -28,7 +28,7 @@ export type getTenantResponse = {
     secondColor: string;
 }
 
-export const useApi = (tenentSlug: string) => ({
+export const Api = (tenentSlug: string) => ({
 
     getTenant: async () => {
         

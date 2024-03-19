@@ -9,7 +9,7 @@ import { InputFild } from '../../components/InputFild';
 import { Logo } from '../../components/Logo';
 import { useAppContext } from '../../contexts/app';
 import { useAuthContext } from '../../contexts/auth';
-import { useApi } from '../../libs/useApi';
+import { Api } from '../../libs/useApi';
 import styles from '../../styles/login.module.css';
 import { Tenent } from '../../types/Tenent';
 
@@ -146,7 +146,7 @@ type Props = {
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const { tenent: tenantSlug } = context.query
-    const api = useApi(tenantSlug as string);
+    const api = Api(tenantSlug as string);
 
 
     //Get Tenant

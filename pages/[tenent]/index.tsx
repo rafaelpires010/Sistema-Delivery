@@ -9,7 +9,7 @@ import { SearchInput } from '../../components/Searchinput';
 import { Sidebar } from '../../components/Sidebar';
 import { useAppContext } from '../../contexts/app';
 import { useAuthContext } from '../../contexts/auth';
-import { useApi } from '../../libs/useApi';
+import { Api } from '../../libs/useApi';
 import styles from '../../styles/Home.module.css';
 import { Product } from '../../types/Product';
 import { Tenent } from '../../types/Tenent';
@@ -181,7 +181,7 @@ type Props = {
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const { tenent: tenantSlug } = context.query
-  const api = useApi(tenantSlug as string);
+  const api = Api(tenantSlug as string);
 
 
   //Get Tenant

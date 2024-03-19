@@ -10,7 +10,7 @@ type Props = {
 }
 
 
-const formatter = useFormater();
+
 
 export const AdComponent = ({color, onChange, data }: Props) => {
     
@@ -25,7 +25,7 @@ export const AdComponent = ({color, onChange, data }: Props) => {
             <div className={styles.centerSide}>
 
                 <div className={styles.title}>{data.nome}</div>
-                <div className={styles.preco}>{formatter.fomatePrice(data.preco)}</div>
+                <div className={styles.preco}>{(data.preco)}</div>
             </div>
             <div className={styles.rightSide}>
             

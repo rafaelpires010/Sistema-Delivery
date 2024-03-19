@@ -7,7 +7,7 @@ import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { InputFild } from '../../components/InputFild';
 import { useAppContext } from '../../contexts/app';
-import { useApi } from '../../libs/useApi';
+import { Api } from '../../libs/useApi';
 import styles from '../../styles/SingUp.module.css';
 import { Tenent } from '../../types/Tenent';
 
@@ -172,7 +172,7 @@ type Props = {
 export const getServerSideProps: GetServerSideProps = async (context) => {
 
     const { tenent: tenantSlug } = context.query
-    const api = useApi(tenantSlug as string);
+    const api = Api(tenantSlug as string);
 
 
     //Get Tenant
