@@ -1,0 +1,96 @@
+.container {
+    background-color: #fff;
+}
+
+.headerArea {
+    margin: 0 24px;
+    padding-top: 64px;
+    padding-bottom: 10px;
+    
+}
+
+.headerBG {
+    height: 300px;
+    width: 100vw;
+    background-color: black;
+    background-image: url('/temp/fundo2.avif');
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.productImage {
+    text-align: center;
+    margin-top: -200px;
+}
+
+.productImage img {
+    width: auto;
+    height: 300px;
+}
+
+.category {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin: 0 24px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    color: #1b1b1b;
+    margin: 0 24px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid #000;
+    width: fit-content;
+    position: relative;
+}
+
+.line {
+    border-top: 1.5px solid #e2e2e2;
+    margin: -1.5 24px 0 24px;
+}
+
+.descripition {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(27, 27, 27, .5);
+    margin: 24px;
+}
+
+.qtText {
+    font-weight: 400;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin: 0 24px 16px 24px;
+}
+
+.area {
+
+    display: flex;
+    margin: 0 24px;
+    align-items: center;
+}
+
+
+.areaRight {
+    flex: 1;
+    text-align: right;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+}
+
+.buttonArea {
+    margin: 50px 34px;
+}
+
+.adicionais {
+    
+    font-weight: 400;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin: 24px;
+}

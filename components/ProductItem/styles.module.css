@@ -1,0 +1,48 @@
+.container{
+    
+    background: #FFFFFF;
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.head {
+
+    height: 90px;
+
+}
+
+.info{
+    padding: 13px;
+}
+
+.info .img{
+    margin-top: -90px;
+    text-align: center;
+}
+
+.info .img img{
+    width: 80%;
+    height: auto;
+}
+
+.info .categoria{
+
+    font-weight: 500;
+    font-size: 8px;
+    color: #1B1B1B;
+}
+
+.info .nome{
+
+    font-weight: 700;
+    font-size: 18px;
+    color: #1B1B1B;
+}
+
+.info .preco{
+
+    font-weight: 600;
+    font-size: 15px;
+}
