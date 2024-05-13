@@ -10,12 +10,12 @@ import { useAppContext } from '../../../contexts/app';
 import { Api } from '../../../libs/useApi';
 import { useFormater } from '../../../libs/useFormater';
 import styles from '../../../styles/Product-id.module.css';
-import { Product } from '../../../types/Product';
 import { Tenent } from '../../../types/Tenent';
 import { CartCokie } from '../../../types/CartCookie';
 import { getCookie, hasCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 import { Complements } from '../../../types/Complements';
+import { Product as Produto} from '../../../types/Product';
 
 const Product = (data: Props) => {
 
@@ -211,7 +211,7 @@ export default Product;
 
 type Props = {
   tenent: Tenent,
-  product: Product,
+  product: Produto,
   complements: Complements[],
   complement: Complements
 

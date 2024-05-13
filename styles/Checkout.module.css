@@ -3,6 +3,38 @@
     padding: 50px 24px;
 }
 
+.infoGroup {
+    border-top: 1.5px solid rgba(27, 27, 27, 0.1);
+    margin-bottom: 40px;
+}
+
+.infoArea {
+    padding-top: 24px;
+}
+
+.infoArea .infoTitle {
+    font-weight: 400;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin-bottom: 8px;
+}
+
+.paymentTypes {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.paymentTypes .paymentBtn {
+    flex: 1;
+}
+
+.cupomInput {
+    display: flex;
+    gap: 14px;
+}
+
+
 .prodQuant {
     border-top: 1.5px solid rgba(27, 27, 27, 0.1);
     border-bottom: 1.5px solid rgba(27, 27, 27, 0.1);

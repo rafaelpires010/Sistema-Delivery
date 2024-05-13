@@ -1,3 +1,4 @@
+import { Address } from "../types/Address";
 import { CartItem } from "../types/CartItem";
 import { Complements } from "../types/Complements";
 import { Product } from "../types/Product";
@@ -129,6 +130,54 @@ export const Api = (tenentSlug: string) => ({
         }
 
         return cart;
+    },
+
+    getUserAddresses: async (email: string) => {
+        const addresses: Address[] = [];
+
+        for(let i=0; i < 4; i++){
+            addresses.push({
+                id: i + 1,
+                cep: '31 573373',
+                rua: 'Grão de Ouro',
+                numero: `${i+1}00`,
+                bairro: 'Piratinínga',
+                cidade: 'Belo Horizonte',
+                estado: 'Minas Gerais'
+            })
+        }
+
+        return addresses;
+    },
+
+    getUserAddress: async (addressid: number) => {
+        let address: Address = {
+            id: addressid,
+                cep: '31 573373',
+                rua: 'Grão de Ouro',
+                numero: `${addressid}00`,
+                bairro: 'Piratinínga',
+                cidade: 'Belo Horizonte',
+                estado: 'Minas Gerais'
+        }
+        return address;
+    },
+
+    addUserAddress: async (address: Address) => {
+        return { ...address, id: 9 };
+
+    },
+
+    editUserAddress: async (newAddressData: Address) => {
+        return true;
+    },
+
+    deleteUserAddress: async (addressid: number) => {
+        return true;
+    },
+
+    getShippingPrice: async (address: Address) => {
+        return 9.16;
     }
     
 });

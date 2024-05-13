@@ -15,7 +15,7 @@ import { Product } from '../../types/Product';
 import { Tenent } from '../../types/Tenent';
 import { User } from '../../types/User';
 import NoitemsIcon from '../../public/temp/notIntens.svg';
-import { Complements} from '../../types/Complements';
+import { Complements } from '../../types/Complements';
 
 const Home = (data: Props) => {
   const { setToken, setUser } = useAuthContext();
@@ -122,15 +122,15 @@ const Home = (data: Props) => {
             </div>
           }
 
-          { filterProducts.length === 0 &&
+          {filterProducts.length === 0 &&
 
-          <div className={styles.noProducts}>
+            <div className={styles.noProducts}>
 
-            <NoitemsIcon></NoitemsIcon>
-            <div className={styles.noProductsText}>
-              Ops! Não há itens com esse nome.
+              <NoitemsIcon></NoitemsIcon>
+              <div className={styles.noProductsText}>
+                Ops! Não há itens com esse nome.
+              </div>
             </div>
-          </div>
 
           }
         </>
