@@ -31,6 +31,7 @@ const Checkout = (data: Props) => {
 
   const formatter = useFormater();
   const router = useRouter();
+  const api = Api(data.tenent.slug)
 
   //Product control
 
@@ -67,8 +68,21 @@ const Checkout = (data: Props) => {
     setSubtotal(sub);
   }, [cart]);
 
-  const handleFinish = () => {
-
+  const handleFinish = async () => {
+    if (shippingAddress) {
+      const order = await api.setOrder(
+        shippingAddress,
+        paymentType,
+        paymentchange,
+        cupom,
+        data.cart
+      );
+      if (order) {
+        router.push(`/${data.tenent.slug}/order/${order.id}`)
+      } else {
+        alert('Ocorreu um erro! Tente mais tarde!')
+      }
+    }
   }
 
   return (

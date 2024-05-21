@@ -1,4 +1,4 @@
-import { getCookie } from 'cookies-next';
+import { getCookie, hasCookie, setCookie } from 'cookies-next';
 import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 import { Banner } from '../../components/Banner';
@@ -16,10 +16,15 @@ import { Tenent } from '../../types/Tenent';
 import { User } from '../../types/User';
 import NoitemsIcon from '../../public/temp/notIntens.svg';
 import { Complements } from '../../types/Complements';
+import { CartButton } from '../../components/cart-button';
+import { useRouter } from 'next/router';
+import { CartItem } from '../../types/CartItem';
+import { SectionTitle } from '../../components/section-title';
 
 const Home = (data: Props) => {
   const { setToken, setUser } = useAuthContext();
   const { tenent, setTenent } = useAppContext();
+  const router = useRouter();
 
   useEffect(() => {
     setTenent(data.tenent);
@@ -49,13 +54,25 @@ const Home = (data: Props) => {
 
 
   const handleSearch = (value: string) => setSearchtext(value);
+  const handleCart = () => { router.push(`/${data.tenent.slug}/cart`) };
+
+  //Resume
+  const [cart, setCart] = useState<CartItem[]>(data.cart);
+
+  const [subtotal, setSubtotal] = useState(0);
+  useEffect(() => {
+    let sub = 0;
+    for (let i in cart) {
+      sub += cart[i].product.preco * cart[i].qt;
+    }
+
+    setSubtotal(sub);
+  }, [cart]);
 
   return (
 
     <div className={styles.container}>
-
-
-
+      <CartButton color={data.tenent.mainColor} cart={data.cart} subtotal={subtotal} onClick={handleCart} />
       <div className={styles.headercontainer}>
 
         <header className={styles.header} style={{ backgroundColor: tenent?.background }}>
@@ -116,6 +133,7 @@ const Home = (data: Props) => {
                 <ProductItem
                   key={index}
                   data={item}
+                  onClick={() => { }}
                 />
               ))}
 
@@ -142,11 +160,12 @@ const Home = (data: Props) => {
           <Banner />
           <MenuCarrosel />
 
-
+          <SectionTitle title='Tradicionais' />
           <div className={styles.grid}>
 
             {products.map((item, index) => (
               <ProductItem
+                onClick={() => { }}
                 key={index}
                 data={item}
               />
@@ -156,9 +175,6 @@ const Home = (data: Props) => {
         </>
 
       }
-
-
-
     </div>
 
   );
@@ -175,6 +191,7 @@ type Props = {
   token: string,
   user: User | null;
   complements: Complements[]
+  cart: CartItem[];
 
 }
 
@@ -200,12 +217,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   const products = await api.getAllProducts();
 
+  //get Cart Products
+  const cartCookie = getCookie('cart', context);
+
+  const cart = await api.getCartProduct(cartCookie as string);
+  console.log(cart)
+
   return {
     props: {
       tenent,
       products,
       user,
-      token,
+      //token,
+      cart
     }
   }
 

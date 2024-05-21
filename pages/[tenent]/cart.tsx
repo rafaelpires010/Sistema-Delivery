@@ -35,11 +35,11 @@ const Cart = (data: Props) => {
   const [cart, setCart] = useState<CartItem[]>(data.cart);
 
   const handleCartchange = (newCount: number, id: number) => {
-    
+
     const tempcart: CartItem[] = [...cart];
 
     const cartindex = tempcart.findIndex(item => item.product.id === id);
-    if(newCount > 0) {
+    if (newCount > 0) {
       tempcart[cartindex].qt = newCount;
     } else {
       delete tempcart[cartindex];
@@ -52,7 +52,7 @@ const Cart = (data: Props) => {
     //update cookie
 
     let cartCookie: CartCokie[] = [];
-    for(let i in newcart) {
+    for (let i in newcart) {
       cartCookie.push({
         id: newcart[i].product.id,
         qt: newcart[i].qt,
@@ -111,7 +111,7 @@ const Cart = (data: Props) => {
 
       <div className={styles.prodList}>
         {cart.map((cartitem, index) => (
-          <CartProductItem 
+          <CartProductItem
             key={index}
             color={data.tenent.mainColor}
             quantidade={cartitem.qt}

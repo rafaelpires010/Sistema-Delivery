@@ -1,6 +1,7 @@
 import { Address } from "../types/Address";
 import { CartItem } from "../types/CartItem";
 import { Complements } from "../types/Complements";
+import { Order } from "../types/Order";
 import { Product } from "../types/Product";
 import { Tenent } from "../types/Tenent";
 import { User } from "../types/User";
@@ -20,6 +21,33 @@ const TempOneComplement: Complements = {
     nome: 'Borda Catupiry',
     preco: 5.76,
     qt: 0
+}
+
+const TEMPORARYorder: Order = {
+    id: 123,
+    status: "delivered",
+    orderDate: "2022-12-04",
+    userid: "123",
+    shippingAddress: {
+        id: 2,
+        cep: "31573373",
+        rua: "Rua das Flores",
+        numero: "200",
+        bairro: "Cu preto",
+        cidade: "Jabirosca",
+        estado: "AC",
+    },
+    shippingPrice: 9.14,
+    paymentType: "card",
+    cupom: 'ABC',
+    cupomDiscount: 14.3,
+    products: [
+        {product: {...TempOneProduct, id: 1}, qt:1},
+        {product: {...TempOneProduct, id: 2}, qt:2},
+        {product: {...TempOneProduct, id: 3}, qt:1},
+    ],
+    subtotal: 204,
+    total: 198.84
 }
 
 
@@ -178,6 +206,20 @@ export const Api = (tenentSlug: string) => ({
 
     getShippingPrice: async (address: Address) => {
         return 9.16;
+    },
+
+    setOrder: async (
+        address: Address,
+        paymentType: 'money' | 'card',
+        paymentChange: number,
+        cupom: string,
+        cart: CartItem[]
+    ) => {
+        return TEMPORARYorder;
+    },
+
+    getOrder: async (orderid: number) => {
+        return TEMPORARYorder;
     }
     
 });

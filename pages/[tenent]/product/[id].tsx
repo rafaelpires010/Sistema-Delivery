@@ -15,7 +15,7 @@ import { CartCokie } from '../../../types/CartCookie';
 import { getCookie, hasCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router';
 import { Complements } from '../../../types/Complements';
-import { Product as Produto} from '../../../types/Product';
+import { Product as Produto } from '../../../types/Product';
 
 const Product = (data: Props) => {
 
@@ -56,52 +56,52 @@ const Product = (data: Props) => {
 
     if (cartIndex > -1) {
       cart[cartIndex].qt += qtCount;
-      
+
     } else {
-      
-        cart.push({
-          id: data.product.id, qt: qtCount,
-        });
-      
+
+      cart.push({
+        id: data.product.id, qt: qtCount,
+      });
+
     }
 
-   
 
-   
-    
+
+
+
 
     //setting cookie
     setCookie('cart', JSON.stringify(cart));
 
     // going to cart
-    router.push(`/${data.tenent.slug}/cart`);
+    router.push(`/${data.tenent.slug}`);
 
 
   }
 
   const handleUpdateQt = (newCount: number) => {
     setQtCount(newCount)
-    
+
   }
 
 
   useEffect(() => {
-    
+
   }, [qtCountAd]);
 
   const handleUpdateQtAd = () => {
-    
-    for(let i in complements){
-      
+
+    for (let i in complements) {
+
     }
-    
+
   }
 
-    
-  
-   
 
-    
+
+
+
+
 
   const formatter = useFormater();
 
@@ -166,20 +166,20 @@ const Product = (data: Props) => {
 
       <div className={styles.AreaAdAd}>
 
-      {complements.map((item, index) => (
-         
-         <AdComponent
+        {complements.map((item, index) => (
 
-          color={data.tenent.mainColor}
-          onChange={handleUpdateQtAd}
-          data={item}
-          key={index}
-          
-        />
+          <AdComponent
 
-        
-      ))}
-        
+            color={data.tenent.mainColor}
+            onChange={handleUpdateQtAd}
+            data={item}
+            key={index}
+
+          />
+
+
+        ))}
+
 
       </div>
 
@@ -187,13 +187,13 @@ const Product = (data: Props) => {
 
       <div className={styles.buttonArea}>
 
-        
+
         <Button color={data.tenent.mainColor}
           label={`Adicionar ${formatter.fomatePrice(
 
             qtCount * data.product.preco
-             + 
-             qtCountAd * data.complements[1].preco)}`}
+            +
+            qtCountAd * data.complements[1].preco)}`}
 
           onClick={handleAddToCart}
           fill

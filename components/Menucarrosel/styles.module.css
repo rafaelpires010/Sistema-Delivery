@@ -1,25 +1,28 @@
 .menuCarrosel{
-      
     margin: 24px;
-
   }
   
   .buttonCarrosel {
-    
-    font-size: 15px;
-
-    border: 3px solid;
-    
-    height: 40px;
-    border-radius: 17px;
-
-    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgba(27, 27, 27, 0.7);
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.15);
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
   }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(27, 27, 27, 0.7);
+  }
+
 
 
   

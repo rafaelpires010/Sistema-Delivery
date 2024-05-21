@@ -8,6 +8,7 @@ import Rightarrow from './rightarrow.svg'
 import Dots from './dots.svg'
 import Edit from './edit.svg'
 import Delete from './delete.svg'
+import Cart from './cart.svg'
 
 type Props = {
     icon: string;
@@ -32,6 +33,7 @@ export const Icon = ({ icon, color, largura, altura }: Props) => {
             {icon === 'dots' && <Dots color={color} />}
             {icon === 'edit' && <Edit color={color} />}
             {icon === 'delete' && <Delete color={color} />}
+            {icon === 'cart' && <Cart color={color} />}
         </div>
     );
 }
