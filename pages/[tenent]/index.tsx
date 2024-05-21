@@ -228,7 +228,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       tenent,
       products,
       user,
-      //token,
+      token,
       cart
     }
   }
