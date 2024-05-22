@@ -20,6 +20,7 @@ import { CartButton } from '../../components/cart-button';
 import { useRouter } from 'next/router';
 import { CartItem } from '../../types/CartItem';
 import { SectionTitle } from '../../components/section-title';
+import { SectionOpenClose } from '../../components/section-openClose';
 
 const Home = (data: Props) => {
   const { setToken, setUser } = useAuthContext();
@@ -77,7 +78,6 @@ const Home = (data: Props) => {
 
         <header className={styles.header} style={{ backgroundColor: tenent?.background }}>
           <div className={styles.headerTop}>
-
             <Logo />
 
             <div className={styles.menubuttondiv}>
@@ -99,9 +99,6 @@ const Home = (data: Props) => {
               />
 
             </div>
-
-
-
           </div>
 
 
@@ -114,10 +111,10 @@ const Home = (data: Props) => {
             />
 
           </div>
-
         </header>
 
       </div>
+      <SectionOpenClose />
 
       {searchText &&
         <>

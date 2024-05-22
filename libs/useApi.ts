@@ -25,7 +25,7 @@ const TempOneComplement: Complements = {
 
 const TEMPORARYorder: Order = {
     id: 123,
-    status: "delivered",
+    status: "sent",
     orderDate: "2022-12-04",
     userid: "123",
     shippingAddress: {

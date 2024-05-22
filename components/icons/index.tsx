@@ -9,6 +9,10 @@ import Dots from './dots.svg'
 import Edit from './edit.svg'
 import Delete from './delete.svg'
 import Cart from './cart.svg'
+import StoreOpen from './storeOpen.svg'
+import StoreClose from './storeClose.svg'
+import ArrowRight from './Arrowright.svg'
+import Ellipse from './Ellipse.svg'
 
 type Props = {
     icon: string;
@@ -30,10 +34,14 @@ export const Icon = ({ icon, color, largura, altura }: Props) => {
             {icon === 'location' && <Location color={color} />}
             {icon === 'money' && <Money color={color} />}
             {icon === 'rightarrow' && <Rightarrow color={color} />}
+            {icon === 'arrowRight' && <ArrowRight color={color} />}
             {icon === 'dots' && <Dots color={color} />}
             {icon === 'edit' && <Edit color={color} />}
             {icon === 'delete' && <Delete color={color} />}
             {icon === 'cart' && <Cart color={color} />}
+            {icon === 'storeOpen' && <StoreOpen color={color} />}
+            {icon === 'storeClose' && <StoreClose color={color} />}
+            {icon === 'ellipse' && <Ellipse color={color} />}
         </div>
     );
 }

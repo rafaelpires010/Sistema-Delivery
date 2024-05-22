@@ -7,6 +7,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
+    z-index: 20;
 }
 
 .conteudo {
@@ -48,6 +49,7 @@
     height: 18px;
     margin-left: 15px;
     margin-top: 10px;
-    z-index: 20;
     padding: 11px;
+    position: fixed;
+    z-index: 21;
 }

@@ -71,11 +71,11 @@ const OrderId = (data: Props) => {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Pedidos #{data.order.id}| {data.tenent.name}</title>
+                <title>Pedido #{data.order.id}| {data.tenent.name}</title>
             </Head>
 
             <Header
-                backHref={`/${data.tenent.slug}`}
+                backHref={`/${data.tenent.slug}/orders`}
                 title={`Pedido #${data.order.id}`}
                 color={data.tenent.mainColor}
             />
