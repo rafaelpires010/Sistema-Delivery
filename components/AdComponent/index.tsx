@@ -1,40 +1,47 @@
+import { useState } from 'react';
 import { useFormater } from '../../libs/useFormater';
 import { Complements } from '../../types/Complements';
 import { Quantity } from '../Quantity';
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 type Props = {
-    color: string;
+    color?: string;
     onChange: (newCountAd: number, id: number) => void;
     data: Complements;
-}
+};
 
+export const AdComponent = ({ color, onChange, data }: Props) => {
+    const formatter = useFormater();
+    const [count, setCount] = useState(0);
 
+    const handleUpdateCount = (newCount: number) => {
+        setCount(newCount);
+        onChange(newCount, data.id);
+    };
 
-
-export const AdComponent = ({color, onChange, data }: Props) => {
-    
     return (
-        
-        <div className={styles.container}>
-            <div className={styles.leftSide}>
-
-            <input className={styles.checkbox} type="checkbox"/>
-
+        <>
+            <div className={styles.container}>
+                <div className={styles.leftSide}></div>
+                <div className={styles.centerSide}>
+                    <div className={styles.title}>{data.nome}</div>
+                    <div className={styles.preco}>+{formatter.fomatePrice(data.preco)}</div>
+                </div>
+                <div className={styles.rightSide}>
+                    {!color && <input className={styles.checkbox} type="checkbox" />}
+                    {color && (
+                        <Quantity
+                            color={color}
+                            count={count}
+                            onUpdateCount={handleUpdateCount}
+                            min={0}
+                            max={10}
+                            small
+                        />
+                    )}
+                </div>
             </div>
-            <div className={styles.centerSide}>
-
-                <div className={styles.title}>{data.nome}</div>
-                <div className={styles.preco}>{(data.preco)}</div>
-            </div>
-            <div className={styles.rightSide}>
-            
-                
-            </div>
-            
-        </div>
-        
+            <div style={{ borderBottom: '0.5px solid rgba(27, 27, 27, .1)' }}></div>
+        </>
     );
-    
-}
-
+};

@@ -13,7 +13,7 @@ const TempOneProduct: Product = {
     nome: 'Calabresa',
     preco: 55.76,
     description: '2 Blends de carne de 150g, Queijo Cheddar Bacon Caramelizado, Salada, Molho da casa, Pão brioche artesanal,',
-
+    selectedComplements: []
 }
 
 const TempOneComplement: Complements = {
@@ -133,30 +133,27 @@ export const Api = (tenentSlug: string) => ({
 
     getCartProduct: async (cartCookie: string) => {
         let cart: CartItem[] = [];
-
-        if(!cartCookie) return cart;
-
+    
+        if (!cartCookie) return cart;
+    
         const cartJson = JSON.parse(cartCookie);
-        for(let i in cartJson) {
-            if(cartJson[i].id && cartJson[i].qt) {
-                const product = {
-                    ...TempOneProduct,
-                    id: cartJson[i].id
+        for (let i in cartJson) {
+            if (cartJson[i].id && cartJson[i].qt) {
+                // Crie uma cópia do produto baseado no TempOneProduct
+                let product = { ...TempOneProduct, id: cartJson[i].id };
+    
+                // Verifique se há complementos no cookie e adicione-os ao produto
+                if (cartJson[i].complements) {
+                    product.selectedComplements = cartJson[i].complements;
                 }
-
-                if(cartJson[i].id && cartJson[i].qt) {
-                    const product = {
-                        ...TempOneProduct,
-                        id: cartJson[i].id
-                    }}
-
+    
                 cart.push({
                     qt: cartJson[i].qt,
                     product
-                })
+                });
             }
         }
-
+    
         return cart;
     },
 

@@ -218,7 +218,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const cartCookie = getCookie('cart', context);
 
   const cart = await api.getCartProduct(cartCookie as string);
-  console.log(cart)
 
   return {
     props: {

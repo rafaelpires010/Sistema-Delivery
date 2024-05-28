@@ -31,12 +31,42 @@ const Product = (data: Props) => {
   const [qtCountAd, setQtCountAd] = useState(0);
   const [complements, setComplements] = useState<Complements[]>(data.complements);
 
+  //definindo a quantidade de acompanhamentos
+
+  const handleUpdateQtAd = (newCount: number, complementId: number) => {
+    const updatedComplements = complements.map(complement => {
+      if (complement.id === complementId) {
+        return { ...complement, qt: newCount };
+      }
+      return complement;
+    });
+    setComplements(updatedComplements);
+  };
+
+
+  // Função para adicionar complementos ao produto
+  const addComplementsToProduct = (product: Produto, selectedComplements: Complements[]): Produto => {
+    // Verifica se a quantidade de complementos é maior que zero
+    if (selectedComplements.length > 0) {
+      // Se sim, adiciona os complementos ao objeto do produto
+      return {
+        ...product,
+        selectedComplements: selectedComplements
+      };
+    } else {
+      // Se não, retorna o produto original sem alterações
+      return product;
+    }
+  };
+
+
   const handleAddToCart = () => {
+    // Adiciona os complementos selecionados ao produto
+    const productWithComplements = addComplementsToProduct(data.product, complements);
 
     let cart: CartCokie[] = [];
 
-    // create or get existing cart
-
+    // Código para criar ou obter o carrinho existente
     if (hasCookie('cart')) {
       const cartCookie = getCookie('cart');
       const cartJson: CartCokie[] = JSON.parse(cartCookie as string);
@@ -45,39 +75,27 @@ const Product = (data: Props) => {
           cart.push(cartJson[i]);
         }
       }
-
     }
 
-
-    // search product in cart
-
-    const cartIndex = cart.findIndex(item => item.id === data.product.id);
-
+    // Procura o produto no carrinho
+    const cartIndex = cart.findIndex(item => item.id === productWithComplements.id);
 
     if (cartIndex > -1) {
       cart[cartIndex].qt += qtCount;
-
     } else {
-
       cart.push({
-        id: data.product.id, qt: qtCount,
+        id: productWithComplements.id,
+        qt: qtCount,
       });
-
     }
 
-
-
-
-
-
-    //setting cookie
+    // Configura o cookie
     setCookie('cart', JSON.stringify(cart));
 
-    // going to cart
+    // Redireciona para o carrinho
     router.push(`/${data.tenent.slug}`);
-
-
-  }
+    console.log(productWithComplements)
+  };
 
   const handleUpdateQt = (newCount: number) => {
     setQtCount(newCount)
@@ -88,20 +106,6 @@ const Product = (data: Props) => {
   useEffect(() => {
 
   }, [qtCountAd]);
-
-  const handleUpdateQtAd = () => {
-
-    for (let i in complements) {
-
-    }
-
-  }
-
-
-
-
-
-
 
   const formatter = useFormater();
 
@@ -156,7 +160,6 @@ const Product = (data: Props) => {
         >{formatter.fomatePrice(data.product.preco)}</div>
       </div>
 
-      <div className={styles.adicionais}>Complementos</div>
       <div className={styles.AreaAd}>
         <AreaTitleCA
           title='Escolha um molho'
@@ -169,11 +172,10 @@ const Product = (data: Props) => {
         {complements.map((item, index) => (
 
           <AdComponent
-
-            color={data.tenent.mainColor}
             onChange={handleUpdateQtAd}
             data={item}
             key={index}
+            color={data.tenent.mainColor}
 
           />
 
@@ -192,8 +194,7 @@ const Product = (data: Props) => {
           label={`Adicionar ${formatter.fomatePrice(
 
             qtCount * data.product.preco
-            +
-            qtCountAd * data.complements[1].preco)}`}
+          )}`}
 
           onClick={handleAddToCart}
           fill

@@ -1,12 +1,11 @@
-import { Complements } from "./Complements"
+import { Complements } from "./Complements";
 
 export type Product = {
-
-    id: number
-    image: string
-    categoria: string
-    nome: string
+    id: number;
+    image: string;
+    categoria: string;
+    nome: string;
     preco: number;
     description?: string;
-    complements?: Complements;
-}
+    selectedComplements?: Complements[]; // Adicionando campo para complementos selecionados
+};
