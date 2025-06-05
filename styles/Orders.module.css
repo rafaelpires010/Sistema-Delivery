@@ -1,0 +1,138 @@
+.container {
+    background-color: #FFF;
+    min-height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.headerArea {
+    background-color: transparent;
+    padding: 50px 24px 0;
+}
+
+.headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px 50px;
+}
+
+.containerPedidos {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pedido {
+    margin-top: 24px;
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+}
+
+.conteudo {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    flex: 1;
+}
+
+.id {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1b1b1b;
+}
+
+.date {
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #96A3AB;
+}
+
+.textTotal {
+    margin-top: 21px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #96A3AB;
+}
+
+.total {
+    margin-top: 2px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+}
+
+.statusIcons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon {
+    display: flex;
+}
+
+.orderInfoStatus {
+    font-weight: 600;
+    font-size: 11px;
+    padding: 6px 17px;
+    border-radius: 4px;
+}
+
+.button {
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .headerArea {
+        padding: 50px 16px 0;
+    }
+
+    .content {
+        padding: 24px 16px 50px;
+    }
+
+    .conteudo {
+        padding: 16px;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .right {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .id {
+        font-size: 18px;
+    }
+
+    .total {
+        font-size: 18px;
+    }
+}

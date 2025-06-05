@@ -1,0 +1,45 @@
+.container {
+    background-color: #FFF;
+    min-height: 100vh;
+}
+
+.headerArea {
+    background-color: transparent;
+    padding: 50px 24px 0;
+}
+
+.headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 24px 50px;
+}
+
+.list {
+    flex: 1;
+    border-top: 1.5px solid rgba(27, 27, 27, 0.1);
+    margin-bottom: 24px;
+}
+
+.btnArea {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btnArea button {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .headerArea {
+        padding: 50px 16px 0;
+    }
+
+    .content {
+        padding: 24px 16px 50px;
+    }
+}

@@ -1,0 +1,19 @@
+.container {
+    height: 30px;
+}
+
+.icon {
+    padding-top: 2px;
+    padding-right: 2px;
+}
+
+.text {
+    font-weight: 600;
+}
+
+.conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
