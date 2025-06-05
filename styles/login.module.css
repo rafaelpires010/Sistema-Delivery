@@ -1,0 +1,95 @@
+.container {
+    background-color: #FFF;
+    min-height: 100vh;
+}
+
+.headerArea {
+    background-color: transparent;
+    padding: 50px 24px 0;
+}
+
+.headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.loginArea {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.formArea {
+    background-color: #FFF;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.08);
+}
+
+.formTitle {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 32px;
+    color: #1B1B1B;
+}
+
+.inputArea {
+    margin-bottom: 24px;
+}
+
+.inputLabel {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1B1B1B;
+    margin-bottom: 8px;
+    display: block;
+    text-align: left;
+}
+
+.forgetArea {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.forgetLink {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1B1B1B;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.divider {
+    margin: 32px 0;
+    border-top: 1.5px solid rgba(27, 27, 27, 0.1);
+    position: relative;
+    text-align: center;
+}
+
+.dividerText {
+    background-color: #FFF;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #96A3AB;
+    position: relative;
+    top: -12px;
+}
+
+.signupButton {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .formArea {
+        padding: 24px;
+    }
+
+    .formTitle {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}
+

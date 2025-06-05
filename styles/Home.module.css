@@ -1,0 +1,153 @@
+.container {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.headercontainer {
+    width: 100%;
+    background-color: black;
+}
+
+.header {
+    width: 100%;
+    padding: 12px 0 30px;
+}
+
+.headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.headerTop {
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+    justify-content: space-between;
+}
+
+.menuArea {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.desktopMenu {
+    display: none;
+}
+
+.userInfo {
+    color: #fff;
+    margin-right: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 2rem;
+}
+
+.userInfo strong {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.loginButton {
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 2rem;
+    transition: all 0.2s ease;
+}
+
+.loginButton:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.menuButton {
+    width: 18px;
+    height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.menuButtonLine {
+    background-color: rgb(255, 255, 255);
+    height: 3px;
+    border-radius: 2px;
+}
+
+.mainContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 82px;
+    width: 100%;
+}
+
+.searchText {
+    font-weight: 400;
+    font-size: 16px;
+    color: #979797;
+    margin: 24px 0;
+}
+
+.searchText strong {
+    font-weight: 600;
+}
+
+.noProducts {
+    width: 235px;
+    margin: 88px auto;
+}
+
+.noProductsText {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #cdcdcd;
+    text-align: center;
+    margin-top: 32px;
+}
+
+@media (min-width: 1024px) {
+    .desktopMenu {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+    }
+
+    .menuButton {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .headerContent {
+        padding: 0 16px;
+    }
+    
+    .userInfo,
+    .loginButton {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        padding: 0 16px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+}

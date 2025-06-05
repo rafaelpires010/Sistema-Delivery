@@ -1,0 +1,53 @@
+.menuCarrosel {
+  margin: 24px;
+}
+
+.buttonCarrosel {
+  border-bottom: 1px solid rgba(27, 27, 27, 0.7);
+  box-shadow: 0px 8px 40px rgba(0, 0, 0, 0.15);
+  display: inline-flex; /* Faz o botão acompanhar o conteúdo */
+  align-items: center;
+  padding: 8px 12px; /* Adiciona espaçamento para o conteúdo */
+  height: 45px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.image img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(27, 27, 27, 0.7);
+  margin-left: 8px; /* Espaçamento entre imagem e texto */
+}
+
+.menuCarrosel {
+  margin-bottom: 40px;
+}
+
+.grid {
+  padding: 20px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

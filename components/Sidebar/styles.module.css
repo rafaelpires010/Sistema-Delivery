@@ -1,0 +1,108 @@
+.container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    background-color: #fff;
+    z-index: 9999;
+    transition: all ease .2s;
+    overflow-x: hidden;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.area {
+    display: flex;
+    flex-direction: column;
+    width: min(100vw, 375px);
+    height: 100%;
+    margin-left: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 1.5rem) 0;
+    position: relative;
+}
+
+.header .loginArea {
+    border-bottom: 1.5px solid #000;
+    margin-left: clamp(1rem, 3vw, 1.5rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+    min-width: min(230px, 70%);
+}
+
+.header .closeBtn {
+    width: clamp(2rem, 5vw, 2.5rem);
+    height: clamp(2rem, 5vw, 2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.header .closeBtn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.header .userinfo {
+    font-weight: 400;
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    color: #96A3Ab;
+}
+
+.header .userinfo strong {
+    font-weight: 500;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    color: #1b1b1b;
+    display: block;
+    margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
+}
+
+.line {
+    border-bottom: 1.5px solid #E2E2E2;
+    margin: 0 clamp(1rem, 3vw, 1.5rem);
+}
+
+.menu {
+    flex: 1;
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(2rem, 6vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+.menubutton {
+    padding: clamp(1.5rem, 4vw, 2rem) clamp(2rem, 6vw, 3rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileOnly {
+    display: flex;
+}
+
+@media (min-width: 1024px) {
+    .container {
+        display: none;
+    }
+}
+
+@media (max-width: 1023px) {
+    .area {
+        width: 100vw;
+    }
+    
+    .header {
+        margin-top: 1.5rem;
+    }
+    
+    .header .loginArea {
+        margin-left: 1rem;
+        padding-bottom: 1.5rem;
+    }
+}

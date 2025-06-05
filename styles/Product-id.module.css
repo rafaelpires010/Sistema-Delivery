@@ -1,0 +1,147 @@
+.container {
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.headerArea {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 64px 24px 10px;
+}
+
+.headerBG {
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    background-image: url('/temp/fundo2.avif');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.productImage {
+    text-align: center;
+    margin-top: -200px;
+}
+
+.productImage img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.category {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin-top: 24px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 40px);
+    line-height: 1.2;
+    color: #1b1b1b;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid #000;
+    width: fit-content;
+    position: relative;
+    margin-top: 8px;
+}
+
+.line {
+    border-top: 1.5px solid #e2e2e2;
+    margin: -1.5px 0 0 0;
+}
+
+.descripition {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: rgba(27, 27, 27, .5);
+    margin: 24px 0;
+}
+
+.qtText {
+    font-weight: 400;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin-bottom: 16px;
+}
+
+.area {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.areaRight {
+    flex: 1;
+    text-align: right;
+    font-size: clamp(32px, 5vw, 40px);
+    font-weight: 600;
+}
+
+.buttonArea {
+    margin: 50px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttonArea button {
+    min-width: 350px;
+    font-size: 18px;
+}
+
+.adicionais {
+    font-weight: 400;
+    font-size: 16px;
+    color: #1b1b1b;
+    margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+    .headerArea {
+        padding: 64px 16px 10px;
+    }
+
+    .content {
+        padding: 0 16px;
+    }
+
+    .productImage {
+        margin-top: -150px;
+    }
+
+    .productImage img {
+        max-width: 300px;
+    }
+
+    .area {
+        gap: 16px;
+    }
+
+    .buttonArea {
+        margin: 32px -16px;
+        justify-content: center;
+        padding: 0 16px;
+        width: calc(100% + 32px);
+    }
+
+    .buttonArea button {
+        width: 100%;
+        min-width: unset;
+        font-size: 16px;
+        max-width: none;
+    }
+}
+
